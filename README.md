@@ -1,38 +1,97 @@
-# Unicorn Lab
-## Security Info
+# INSTALAÇÃO DO MEDIAWIKI
 
-You can use the [editor on GitHub](https://github.com/gvieira29/unicorn/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+O MediaWiki é um modelo de Wiki OpenSource.  
+Confira o [Site Oficial](https://www.mediawiki.org/wiki/MediaWiki).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Montando um Servidor Web
 
-### Markdown
+**Para fazer a instalação da Wiki, vamos configurar um servidor web (caso não tenha ainda). Siga estas etapas:**  
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- Voce pode instalar o pacote LAMP, que  pode ser feito através do comando `# apt install -y lamp-server^`, mas este guia ira mostrar como baixar os pacotes separadamente
+  ```
+  # apt install -y lamp-server^
+  ```
 
-```markdown
-Syntax highlighted code block
+- **Instalar o apache:** 
+  ```
+  # apt install -y apache2
+  ```
+  Pronto, o apache esta instalado.  
+  Agora dê acesso ao diretório utilizando:  
+  ```
+  # chmod 777 /var/www
+  ```
 
-# Header 1
-## Header 2
-### Header 3
+- **Instalar o PHP:**    
+  ```
+  # apt install -y libapache2-mod-php php php-cli php-common php-gd php-intl php-mbstring php-pear php-xml php-zip
+  ```
+  Para verificar se está funcionando corretamente, crie uma pagina de teste:  
+  ```
+  ~$ echo "<?php phpinfo(); ?>" >> teste.php
+  ~$ cp teste.php /var/www/html
+  ~$ service apache2 restart
+  ```
+  Agora acesse **localhost/teste.php** ou **127.0.0.1/teste.php** para verificar a página que criamos.  
 
-- Bulleted
-- List
+- **Instalar o Banco de Dados: vamos utilizar o MySQL mas também pode ser usado MariaDB para este projeto.**  
+  ```
+  # apt install -y mysql-client mysql-server php-mysql
+  ```
+  Com o MySQL Instalado, abra com o comando:
+  ```
+  # mysql
+  ```
+  - Para verificar se esta funcionando, digite o comando:
+    ```
+    SHOW DATABASES;
+    ```
+  - **Crie um novo banco:**
+    ```
+    CREATE DATABASE bancowiki;
+    ```
+    Para deletar um banco, utilize:
+    ```
+    DROP DATABASE bancowiki;
+    ```
+  - **Crie um usuario e senha para seu banco:**
+    ```
+    CREATE USER 'usuario1234'@'localhost' IDENTIFIED BY 'senha1234';
+    ```
+  - **De as permissoes para o usuario:**
+    ```
+    GRANT ALL PRIVILEGES ON *.* TO 'usuario1234'@'localhost' WITH GRANT OPTION;
+    ```
+  - **Rode o comando para atualizar:**
+    ```
+    FLUSH PRIVILEGES;
+    ```
+- **Instalar o *PHPMYADMIN***
+  ```
+  # apt install -y phpmyadmin
+  ```
+  Durante o processo, ira perguntar qual servidor deseja usar para executar o ***phpmyadmin***, selecione o **apache2** marcando com a tecla **ESPAÇO**, usando a tecla **TAB** mova o cursor para o **OK**. Confirme com **Sim**.  
 
-1. Numbered
-2. List
+  O ***phpmyadmin*** deve estar funcionando, para testar vá até o navegador e acesse **localhost/phpmyadmin** ou **127.0.0.1/phpmyadmin**, para fazer login, utilize usuario e senha cadastrado no **MySQL** que criamos no passo anterior.  
 
-**Bold** and _Italic_ and `Code` text
+## Instalação do MediaWiki
 
-[Link](url) and ![Image](src)
+- **Primeiro é necessário ter o pacote baixado, [link para o arquivo](https://www.mediawiki.org/wiki/Download).**
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/gvieira29/unicorn/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+# wget https://releases.wikimedia.org/mediawiki/1.33/mediawiki-1.33.0.tar.gz
+```
+- **Extraia o pacote:**
+```
+# tar -xf mediawiki-1.33.0.tar.gz
+```
+- **Renomeie a pasta para *html*:**
+```
+# mv mediawiki-1.33.0 html
+```
+- **Siga estes passos:**
+```
+# rm -R /var/www/html
+# cp -R /home/seu_usuario/html /var/www/
+```
+Feito isso, vá até o navegador e acesse **localhost** ou **127.0.0.1**, O MediaWiki estará pronto para ser configurado.  
+Nesse primeiro momento deverá ser feito a criação e configuração do arquivo ***LocalSettings.php***.  
