@@ -12,3 +12,8 @@ Eu só queria morrer o mais cedo possível de doenças ou causas naturais, ou at
 Eu não aguento mais passar o dia todo pensando em N formas de morrer e me sentindo mais mal ainda porque não posso realizar nenhuma delas, eu queria que me deixassem ir embora em paz.
 
 Eu não aguento mais chorar, eu tô a dois dias sem comer nada, um dia sem beber água e sem tomar nenhum remédio, eu não consigo sentir fome nem sede. Eu não tô tomando remédio na esperança de ficar doente ou ter alguma crise e morrer mais rápido, e não tomar remédio me faz sentir fisicamente mal, me faz não respirar direito e ter dores e eu descobri que sentir dor acaba sendo um alívio, é como se eu tivesse descontando minhas tristezas e frustrações em mim mesma. Na madrugada de ontem pra hoje eu bati minha cabeça na parede algumas vezes até criar um galo e me senti melhor.
+
+## Incognita
+
+sinto que estou perdendo o controle de mim. sinto que perdi o controle de tudo. eu me tornei uma pessoa tóxica, desprezível e odiosa. só consigo sentir dor, ódio, raiva, tristeza, fraqueza, arrependimento, descontrole, vergonha, medo, vazio, confusão e caos. não sei de mais nada referente a mim. não me conheço mais. tenho 20 anos e sinto (já a um bom tempo) que a vida não tem mais sentido. sou um peso na vida de todos que me cercam. sei que causo dor e sou uma decepção. esse é um lado meu que ninguém conhecia, e eu conseguia viver em paz com isso, mas agora que fugiu do meu controle, e todo mundo sabe, eu só quero... sumir. eu era linda, cheia de vida, tinha um dom pra arte, tinha as melhores pessoas do meu lado, eu era feliz, eu só não sabia. agora é tarde demais
+
